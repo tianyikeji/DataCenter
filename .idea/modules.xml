@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataCenter.iml" filepath="$PROJECT_DIR$/DataCenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataCenterEurekaServer/DataCenterEurekaServer.iml" filepath="$PROJECT_DIR$/DataCenterEurekaServer/DataCenterEurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataCenterFeignServer/DataCenterFeignServer.iml" filepath="$PROJECT_DIR$/DataCenterFeignServer/DataCenterFeignServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataCenterServer/DataCenterServer.iml" filepath="$PROJECT_DIR$/DataCenterServer/DataCenterServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataCenterZuulServer/DataCenterZuulServer.iml" filepath="$PROJECT_DIR$/DataCenterZuulServer/DataCenterZuulServer.iml" />
+    </modules>
+  </component>
+</project>
