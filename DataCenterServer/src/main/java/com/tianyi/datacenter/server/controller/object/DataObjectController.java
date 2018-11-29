@@ -1,11 +1,14 @@
 package com.tianyi.datacenter.server.controller.object;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.tianyi.datacenter.common.exception.DataCenterException;
 import com.tianyi.datacenter.server.entity.object.DataObject;
 import com.tianyi.datacenter.server.entity.object.DataObjectAttribute;
 import com.tianyi.datacenter.server.service.object.DataObjectAttributeService;
 import com.tianyi.datacenter.server.service.object.DataObjectService;
+import com.tianyi.datacenter.server.service.storage.DataStorageDDLService;
+import com.tianyi.datacenter.server.vo.DataStorageDDLVo;
 import com.tianyi.datacenter.server.vo.PageListVo;
 import com.tianyi.datacenter.server.vo.RequestVo;
 import com.tianyi.datacenter.server.vo.ResponseVo;
@@ -13,9 +16,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,25 +41,47 @@ public class DataObjectController {
     private DataObjectService dataObjectService;
     @Autowired
     private DataObjectAttributeService dataObjectAttributeService;
+    @Autowired
+    private DataStorageDDLService dataStorageDDLService;
 
     @RequestMapping("/object/add")
-    public ResponseVo add(DataObject dataObject, String dataObjectAttribute){
+    public ResponseVo add(@RequestBody DataObject dataObject){
         dataObjectService.insert(dataObject);
+        Map<String, Object> result = new HashMap<>();
+        result.put("id", dataObject.getId());
 
-        Map<String, List<DataObjectAttribute>> attributeMap = (Map<String, List<DataObjectAttribute>>) JSON.parse(dataObjectAttribute);
-        List<DataObjectAttribute> attributeList = attributeMap.get("list");
-        for(DataObjectAttribute doa : attributeList){
-            doa.setResId(dataObject.getId());
-            dataObjectAttributeService.insert(doa);
-        }
+//        if("true".equals(dataObject.getIsDic())){
+//            DataObjectAttribute pid = this.setAttribute(dataObject.getId(), "pid", "int", 11,
+//                    "字典主键", "字典主键", "数字", "规则", "yes", "not null",
+//                    "no", "index");
+//            dataObjectAttributeService.insert(pid);
+//            DataObjectAttribute key = this.setAttribute(dataObject.getId(), "key", "varchar",
+//                    50, "键", "字典数据的键", "文本", "规则", "no", "not null",
+//                    "no", "index");
+//            dataObjectAttributeService.insert(key);
+//            DataObjectAttribute value = this.setAttribute(dataObject.getId(), "value", "varchar",
+//                    50, "值", "字典数据的值", "文本", "规则", "no", "not null",
+//                    "no", "index");
+//            dataObjectAttributeService.insert(value);
+//
+//            List<DataObjectAttribute> attributeList = new ArrayList<>();
+//            attributeList.add(pid);
+//            attributeList.add(key);
+//            attributeList.add(value);
+//
+//            try {
+//                dataStorageDDLService.doServer(dataStorageDDLService.getRequestVo("C", dataObject, attributeList));
+//            } catch (DataCenterException e) {
+//                logger.error(e.toString());
+//            }
+//        }
 
-        //TODO 调用DDL
-
-        return ResponseVo.success();
+        return ResponseVo.success(result);
     }
 
     @RequestMapping("/object/delete")
-    public ResponseVo delete(int id){
+    public ResponseVo delete(@RequestBody JSONObject jsonParam){
+        int id = (int) jsonParam.get("id");
         dataObjectService.delete(id);
 
         Map<String, Object> map = new HashMap<>();
@@ -63,13 +91,20 @@ public class DataObjectController {
         return ResponseVo.success();
     }
 
-    @RequestMapping("object")
+    @RequestMapping("/object")
     @Transactional
-    public ResponseVo update(DataObject dataObject){
+    public ResponseVo update(@RequestBody DataObject dataObject){
+
+
         dataObjectService.update(dataObject);
 
-        //TODO 调用DDL
-
+        if("对象".equals(dataObject.getType())){
+            try {
+                dataStorageDDLService.doServer(dataStorageDDLService.getRequestVo("U", dataObject, null));
+            } catch (DataCenterException e) {
+                logger.error(e.toString());
+            }
+        }
 //        Map<String, Object> map = new HashMap<>();
 //        map.put("resId", dataObject.getId());
 //        dataObjectAttributeService.delete(map);
@@ -85,26 +120,46 @@ public class DataObjectController {
     }
 
     @RequestMapping("/object/list")
-    public ResponseVo list(Integer page, String type, String isDic, String name){
+    public ResponseVo list(@RequestBody JSONObject jsonParam, String type, String isDic, String name){
         Map<String, Object> map = new HashMap<>();
-        map.put("type", type);
-        map.put("isDic", isDic);
-        map.put("name", name);
+        map.put("type", jsonParam.get("type"));
+        map.put("isDic", jsonParam.get("isDic"));
+        map.put("name", jsonParam.get("name"));
+        Map pageInfoTmp = (Map) jsonParam.get("pageInfo");
+        PageListVo pageInfo = new PageListVo((int)pageInfoTmp.get("page"),(int)pageInfoTmp.get("pageSize"));
 
         RequestVo<Map> requestVo = new RequestVo<>(map);
 
-        PageListVo pageListVo = new PageListVo(page);
-        requestVo.setPageInfo(pageListVo);
+        requestVo.setPageInfo(pageInfo);
 
         ResponseVo responseVo = ResponseVo.fail("查询对象失败！");
 
-        try {
-            responseVo = dataObjectService.list(requestVo);
-        } catch (DataCenterException e) {
-            logger.error(e.toString());
+        if(pageInfo.getPage() == 0 && pageInfo.getPageSize() == 0){
+            Map<String, Object> result = new HashMap<>();
+            result.put("list", dataObjectService.listNoPage(map));
+
+            responseVo = ResponseVo.success(result);
+        } else {
+            try {
+                responseVo = dataObjectService.list(requestVo);
+            } catch (DataCenterException e) {
+                logger.error(e.toString());
+            }
         }
 
         return responseVo;
+    }
+
+    @RequestMapping("/object/binding")
+    public ResponseVo binding(JSONObject jsonObject){
+        DataObject dataObject = dataObjectService.getById((int) jsonObject.get("dataObjectId"));
+        dataObject.setPid((int) jsonObject.get("pid"));
+        dataObject.setDicKey((String) jsonObject.get("keyName"));
+        dataObject.setDicValue((String) jsonObject.get("valueName"));
+
+        dataObjectService.update(dataObject);
+
+        return ResponseVo.success();
     }
 
 //    @RequestMapping("listattr")
@@ -127,4 +182,25 @@ public class DataObjectController {
 //
 //        return responseVo;
 //    }
+
+    private DataObjectAttribute setAttribute(int resId, String columnName, String jdbcType, int length, String name,
+                                             String description, String Type, String Rule, String isKey, String isNull,
+                                             String isIncrement, String indexType){
+        DataObjectAttribute dataObjectAttribute = new DataObjectAttribute();
+        dataObjectAttribute.setResId(resId);
+        dataObjectAttribute.setColumnName(columnName);
+        dataObjectAttribute.setJdbcType(jdbcType);
+        dataObjectAttribute.setLength(length);
+        dataObjectAttribute.setName(name);
+        dataObjectAttribute.setDescription(description);
+        dataObjectAttribute.setType(Type);
+        dataObjectAttribute.setRule(Rule);
+        dataObjectAttribute.setIsKey(isKey);
+        dataObjectAttribute.setIsNull(isNull);
+        dataObjectAttribute.setIsIncrement(isIncrement);
+        dataObjectAttribute.setIndexType(indexType);
+
+        return dataObjectAttribute;
+    }
+
 }

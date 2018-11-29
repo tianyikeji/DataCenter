@@ -34,7 +34,7 @@ public class DMLUtilTest {
 
         dmlVo.setDataObject(dataObject);
 
-        String sql = null;
+        String sql = "";
         try {
             sql = DMLUtil.generateDML(dmlVo, null);
         } catch (DataCenterException e) {
@@ -91,5 +91,40 @@ public class DMLUtilTest {
         System.out.println(sql);
         assertEquals("SELECT DISTINCT     fieldA,  fieldB,  fieldC FROM test WHERE field1='value1' and " +
                 "field2='value2' LIMIT 2,50", sql);
+    }
+
+
+    @Test
+    public void generateUpdate() {
+
+        DataStorageDMLVo dmlVo = new DataStorageDMLVo();
+
+        //插入
+        dmlVo.setDmlType("U");
+        //表信息
+        DataObject dataObject = new DataObject();
+        dataObject.setDefined("test");
+        //字段
+        Map<String, Object> info = new HashMap<>();
+        info.put("field1", "value1");
+        info.put("field2", "value2");
+        dmlVo.setUpdateInfo(info);
+
+        dmlVo.setDataObject(dataObject);
+        Map<String, Object> con = new HashMap<>();
+        con.put("field3", "value3");
+        con.put("field4", "value4");
+        dmlVo.setCondition(con);
+
+
+        String sql = "";
+        try {
+            sql = DMLUtil.generateDML(dmlVo, null);
+        } catch (DataCenterException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(sql);
+//        assertEquals("INSERT INTO test ( field1 , field2  ) VALUES (    'value1' ,    'value2'  )", sql);
     }
 }

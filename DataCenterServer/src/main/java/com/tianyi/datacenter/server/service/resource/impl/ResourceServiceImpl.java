@@ -12,13 +12,14 @@ import java.util.Map;
 @Service
 public class ResourceServiceImpl implements ResourceService {
     @Override
-    public RequestVo<Map> integrateData(String dataObjectId, String keyword, int page, int pageSize) {
-        Map<String,Object> map = new HashMap<>();
-        map.put("dataObjectId",dataObjectId);
-        map.put("name",keyword);
+    public RequestVo<Map> integrateData(Integer dataObjectId, String type, String isDic, String keyword, PageListVo pageListVo) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("dataObjectId", dataObjectId);
+        map.put("name", keyword);
+        map.put("isDic",isDic);
+        map.put("type",type);
         RequestVo<Map> requestVo = new RequestVo<>(map);
-        if(page != 0 && pageSize != 0){
-            PageListVo pageListVo = new PageListVo(page, pageSize);
+        if (pageListVo != null) {
             requestVo.setPageInfo(pageListVo);
         }
         return requestVo;

@@ -11,7 +11,7 @@ import java.io.StringWriter;
 import java.util.Map;
 
 /**
- * //TODO 说明
+ * Freemarker模板相关功能
  *
  * @author zhouwei
  * 2018/11/19 21:48
@@ -25,8 +25,6 @@ public class FreeMarkerUtil {
     /**
      * 获取freemarker配置
      *
-     * @param
-     * @return
      * @author zhouwei
      * 2018/11/19 22:00
      */
@@ -40,7 +38,7 @@ public class FreeMarkerUtil {
     }
 
     /**
-     * 数据与模板绑定，生成查询sql //todo
+     * 数据与模板绑定，生成dml和ddl语句
      * @author zhouwei
      * 2018/11/19 21:58
      *

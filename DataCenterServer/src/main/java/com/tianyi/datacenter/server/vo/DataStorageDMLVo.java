@@ -18,9 +18,12 @@ public class DataStorageDMLVo {
 
     private String dmlType;
     private DataObject dataObject;
-    private Map condition;
+    //where条件字段
+    private List<DataObjectAttribute> condition;
+    //select查询字段，新增字段信息，更新字段信息
     private List<DataObjectAttribute> attributes;
-    private Map<String, Object> updateInfo;
+    //新增字段信息，更新字段信息
+//    private List<DataObjectAttribute> updateInfo;
 
     public String getDmlSql() {
         return dmlSql;
@@ -46,11 +49,11 @@ public class DataStorageDMLVo {
         this.dataObject = dataObject;
     }
 
-    public Map<String, Object> getCondition() {
+    public List<DataObjectAttribute> getCondition() {
         return condition;
     }
 
-    public void setCondition(Map condition) {
+    public void setCondition(List<DataObjectAttribute> condition) {
         this.condition = condition;
     }
 
@@ -61,12 +64,12 @@ public class DataStorageDMLVo {
     public void setAttributes(List<DataObjectAttribute> attributes) {
         this.attributes = attributes;
     }
-
-    public Map<String, Object> getUpdateInfo() {
+/*
+    public List<DataObjectAttribute> getUpdateInfo() {
         return updateInfo;
     }
 
-    public void setUpdateInfo(Map<String, Object> updateINfo) {
-        this.updateInfo = updateINfo;
-    }
+    public void setUpdateInfo(List<DataObjectAttribute> updateInfo) {
+        this.updateInfo = updateInfo;
+    }*/
 }

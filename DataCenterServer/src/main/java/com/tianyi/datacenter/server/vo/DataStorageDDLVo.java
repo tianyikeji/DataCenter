@@ -15,6 +15,7 @@ public class DataStorageDDLVo {
     private String ddlType;
     private DataObject dataObject;
     private List<DataObjectAttribute> attributes;
+    private List<DataObjectAttribute> addColumns;
 
     public String getDdlType() {
         return ddlType;
@@ -38,5 +39,13 @@ public class DataStorageDDLVo {
 
     public void setAttributes(List<DataObjectAttribute> attributes) {
         this.attributes = attributes;
+    }
+
+    public void setAddColumns(List<DataObjectAttribute> addColumns) {
+        this.addColumns = addColumns;
+    }
+
+    public List<DataObjectAttribute> getAddColumns() {
+        return addColumns;
     }
 }

@@ -1,6 +1,5 @@
 package com.tianyi.datacenter.server.service.storage.util;
 
-import ch.qos.logback.core.db.dialect.DBUtil;
 import com.tianyi.datacenter.common.exception.DataCenterException;
 import com.tianyi.datacenter.common.util.FreeMarkerUtil;
 import com.tianyi.datacenter.server.entity.object.DataObject;
@@ -10,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ import static com.tianyi.datacenter.common.exception.DataCenterException.DC_DO_8
 @Component
 public class DDLUtil {
 
-    private static Logger logger = LoggerFactory.getLogger(DBUtil.class);
+    private Logger logger = LoggerFactory.getLogger(DBUtil.class);
 
     /**
      * 根据DDL对象生成DDL语句
@@ -30,7 +31,7 @@ public class DDLUtil {
      * @author zhouwei
      * 2018/11/19 15:26
      */
-    public static String generateDDL(DataStorageDDLVo ddlVo) throws DataCenterException {
+    public String generateDDL(DataStorageDDLVo ddlVo) throws DataCenterException {
         String ddlSql = "";
 
         switch (ddlVo.getDdlType()) {
@@ -44,23 +45,62 @@ public class DDLUtil {
                 }
                 break;
             case "U":
-                ftlName = "Update";
+                ftlName = "Alter";
                 //TODO 完成修改表的逻辑
                 if (ddlSql == null) {
                     //TODO
                     throw new DataCenterException("", "");
                 }
+                ddlSql = generateAlterTableSql(ddlVo.getDataObject(), ddlVo.getAttributes(), ftlName);
                 break;
             default:
                 throw new DataCenterException(DC_DO_8901, DC_DO_8901_MSG);
         }
         //删除回车换行符
-        ddlSql = ddlSql.replaceAll("[\r\n]", "");
+        ddlSql = ddlSql.replaceAll("[\r\n]", "").replaceAll("\\s{3,}?", " ");
+        logger.debug("生成create table语句:" + ddlSql);
         return ddlSql;
     }
 
     /**
-     * //TODO 生成创建表的ddl语句
+     * 生成修改表的ddl语句
+     * @author zhouwei
+     * 2018/11/28 19:10
+     * @param dataObject 表信息
+     * @param addColumns 修改字段信息
+     * @param ftlName 模板名称
+     * @return ddl修改表信息sql
+    */
+    private String generateAlterTableSql(DataObject dataObject, List<DataObjectAttribute> addColumns, String ftlName) {
+        String ddlSql = "";
+
+        Map ftlRoot = new HashMap();
+        /*Map<String, Map<String, Object>> columnsInfo = null;
+        try {
+            columnsInfo = database.getColumnsInfo(dataObject.getDefined());
+        } catch (SQLException e) {
+            //TODO
+            e.printStackTrace();
+        }
+        List<DataObjectAttribute> addColumns = new ArrayList<>();
+        for (DataObjectAttribute attribute : addColumns) {
+            if(columnsInfo.get(attribute.getColumnName().toUpperCase())==null){
+              //没有这个字段，需要新增
+                addColumns.add(attribute);
+            }
+            //TODO 修改字段
+        }*/
+
+//        ftlRoot.put("columns", addColumns);
+        ftlRoot.put("addColumns", addColumns);
+        ftlRoot.put("dataObject", dataObject);
+        ddlSql = FreeMarkerUtil.process(ftlRoot, ftlName);
+
+        return ddlSql;
+    }
+
+    /**
+     * 生成创建表的ddl语句
      * 不支持联合主键，联合索引，触发器
      *
      * @param dataObject 数据对象
@@ -70,7 +110,7 @@ public class DDLUtil {
      * @author zhouwei
      * 2018/11/19 16:39
      */
-    private static String generateCreateTableSql(DataObject dataObject,
+    private String generateCreateTableSql(DataObject dataObject,
                                                  List<DataObjectAttribute> attributes, String ftlName) {
         String ddlSql = "";
 
@@ -78,8 +118,6 @@ public class DDLUtil {
         ftlRoot.put("columns", attributes);
         ftlRoot.put("dataObject", dataObject);
         ddlSql = FreeMarkerUtil.process(ftlRoot, ftlName);
-
-        logger.debug("生成create table语句:" + ddlSql);
 
         return ddlSql;
     }
