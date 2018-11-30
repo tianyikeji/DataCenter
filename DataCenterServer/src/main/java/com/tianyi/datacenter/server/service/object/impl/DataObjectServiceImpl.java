@@ -58,18 +58,7 @@ public class DataObjectServiceImpl implements DataObjectService {
         result.put("pageInfo", pageInfo);
         result.put("list", dataObjectList);
 
-        ResponseVo responseVo = ResponseVo.success(result);
-
-        return responseVo;
+        return ResponseVo.success(result);
     }
 
-    @Override
-    public DataObject getById(int id){
-        return dataObjectDao.getById(id);
-    }
-
-    @Override
-    public List<DataObject> listNoPage(Map<String, Object> param){
-        return dataObjectDao.listByNoPage(param);
-    }
 }

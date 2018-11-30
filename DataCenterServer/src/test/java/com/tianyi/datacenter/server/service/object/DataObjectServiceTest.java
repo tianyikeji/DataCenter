@@ -82,11 +82,4 @@ public class DataObjectServiceTest {
         System.out.println(responseVo.getData().get("list"));
     }
 
-    @Test
-    public void testGet(){
-        DataObject dataObject = dataObjectService.getById(12);
-
-        System.out.println(dataObject.getName());
-    }
-
 }

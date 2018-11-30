@@ -13,7 +13,6 @@
         <module>DataCenterServer</module>
         <module>DataCenterFeignServer</module>
         <module>DataCenterZuulServer</module>
-        <module>GenCodeTool</module>
     </modules>
 
     <parent>
@@ -49,15 +48,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-
 </project>

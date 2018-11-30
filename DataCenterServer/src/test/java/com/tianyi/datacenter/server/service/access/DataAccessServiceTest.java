@@ -1,62 +1,45 @@
 package com.tianyi.datacenter.server.service.access;
 
-import com.tianyi.datacenter.server.entity.object.DataObject;
-import com.tianyi.datacenter.server.entity.object.DataObjectAttribute;
+import com.tianyi.datacenter.server.service.access.DataAccessService;
 import com.tianyi.datacenter.server.service.access.impl.DataAccessServiceImpl;
-import com.tianyi.datacenter.server.vo.DataStorageDMLVo;
+import com.tianyi.datacenter.server.vo.DataObjectDMLVo;
 import com.tianyi.datacenter.server.vo.RequestVo;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by wenxinyan on 2018/11/21.
  */
-//@SpringBootTest
-//@RunWith(SpringRunner.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class DataAccessServiceTest {
 
     @Autowired
-    private DataAccessService dataAccessService = new DataAccessServiceImpl();
+    private DataAccessService dataAccessService;
 
     @Test
-    public void integrateDataTest() {
+    public void integrateDataTest(){
 //        DataAccessService dataAccessService = new DataAccessServiceImpl();
 
-        List<DataObjectAttribute> updateAttributes = new ArrayList<>();
-        DataObjectAttribute attribute = new DataObjectAttribute();
-        attribute.setName("updateField1");
-        attribute.setValue("value1");
-        attribute.setType("text");
-        updateAttributes.add(attribute);
-        attribute = new DataObjectAttribute();
-        attribute.setName("updateField2");
-        attribute.setValue("value2");
-        attribute.setType("text");
-        updateAttributes.add(attribute);
+        Map<String, Object> condition = new HashMap<>();
+        condition.put("name", "xxx");
+        condition.put("username", "xxxx");
+        condition.put("password", "1234");
+        Map<String, Object> updateInfo = new HashMap<>();
+        updateInfo.put("name", "xxx");
+        updateInfo.put("username", "xxxx");
+        updateInfo.put("password", "1234");
 
-        List<DataObjectAttribute> conditionAttributes = new ArrayList<>();
-        attribute = new DataObjectAttribute();
-        attribute.setName("conditionField1");
-        attribute.setValue("value3");
-        attribute.setType("text");
-        conditionAttributes.add(attribute);
-        attribute = new DataObjectAttribute();
-        attribute.setName("conditionField2");
-        attribute.setValue("value4");
-        attribute.setType("text");
-        conditionAttributes.add(attribute);
+        RequestVo<DataObjectDMLVo> requestVo = dataAccessService.integrateData("001", "add", 0, 0, null, updateInfo);
 
-        DataObject dataObject = new DataObject();
-
-        RequestVo<DataStorageDMLVo> requestVo = dataAccessService.integrateData(dataObject, "add", 0, 0,
-                conditionAttributes, updateAttributes);
-
-        assertEquals(requestVo.getRequest().getAttributes(), updateAttributes);
-        assertEquals(requestVo.getRequest().getCondition(), conditionAttributes);
+        System.out.println("integrateDataTestResult");
+        System.out.println(requestVo.getPageInfo());
     }
 
 }

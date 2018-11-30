@@ -56,14 +56,4 @@ public class DataObjectAttributeServiceImpl implements DataObjectAttributeServic
 
         return responseVo;
     }
-
-    @Override
-    public List<DataObjectAttribute> listNoPage(Map<String, Object> param){
-        return dataObjectAttributeDao.listByNoPage(param);
-    }
-
-    @Override
-    public DataObjectAttribute getById(int id){
-        return dataObjectAttributeDao.getById(id);
-    }
 }

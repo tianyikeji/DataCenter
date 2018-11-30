@@ -1,20 +1,7 @@
-<#import "MySQL.ftl" as columnInfo>
-ALTER TABLE ${dataObject.defined}
-<#if addColumns?exists>
- <#list addColumns as column>
- ADD COLUMN<@columnInfo.column_definition column=column></@columnInfo.column_definition>
- <#if column_has_next>,</#if>
- </#list>
-</#if>
-<#if alterColumns?exists>
- <#list addColumns as column>
- CHANGE COLUMN ${column.columnName} <@columnInfo.column_definition column=column></@columnInfo.column_definition>
- <#if column_has_next>,</#if>
- </#list>
-</#if>
-<#if dropColumns?exists>
- <#list addColumns as column>
- DROP COLUMN ${column.columnName}
- <#if column_has_next>,</#if>
- </#list>
-</#if>
+ALTER TABLE tbl_name
+    [ADD [COLUMN] col_name data_type [NOT NULL | NULL] [UNIQUE [KEY]] [COMMENT 'string']
+    | ALTER [COLUMN] col_name data_type [NOT NULL | NULL] [UNIQUE [KEY]] [COMMENT 'string']
+    | ALTER INDEX index_name data_type [NOT NULL | NULL] [UNIQUE [KEY]] [COMMENT 'string']
+    | DROP [COLUMN] col_name data_type [NOT NULL | NULL] [UNIQUE [KEY]] [COMMENT 'string']
+    | DROP INDEX index_name data_type [NOT NULL | NULL] [UNIQUE [KEY]] [COMMENT 'string']
+]

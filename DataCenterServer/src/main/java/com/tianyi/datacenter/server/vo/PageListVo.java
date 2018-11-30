@@ -43,11 +43,15 @@ public class PageListVo {
     }
 
     public PageListVo(int page, int pageSize) {
+        if (page == 0) page = 1;
+        if (pageSize == 0) pageSize = PageListVo.DEFAULT_PAGE_SIZE;
         this.page = page;
         this.pageSize = pageSize;
     }
 
     public PageListVo(int page, int pageSize, int total) {
+        if (page == 0) page = 1;
+        if (pageSize == 0) pageSize = PageListVo.DEFAULT_PAGE_SIZE;
         this.page = page;
         this.pageSize = pageSize;
         this.total = total;

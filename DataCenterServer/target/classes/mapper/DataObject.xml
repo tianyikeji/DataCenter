@@ -8,16 +8,13 @@
         <result column="defined" property="defined" jdbcType="VARCHAR" />
         <result column="isDic" property="isDic" jdbcType="VARCHAR" />
         <result column="description" property="description" jdbcType="VARCHAR" />
-        <result column="pid" property="pid" jdbcType="INTEGER" />
-        <result column="dicKey" property="dicKey" jdbcType="VARCHAR" />
-        <result column="dicValue" property="dicValue" jdbcType="VARCHAR" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,type,defined,isDic,description,pid,dicKey,dicValue
+        id,name,type,defined,isDic,description
     </sql>
     <sql id="Base_Column_List_NoId">
-        name,type,defined,isDic,description,pid,dicKey,dicValue
+        name,type,defined,isDic,description
     </sql>
 
     <sql id="conditions">
@@ -36,10 +33,10 @@
 
     <insert id="insert" parameterType="com.tianyi.datacenter.server.entity.object.DataObject" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO data_center_res(
-        <include refid="Base_Column_List_NoId" />
+          <include refid="Base_Column_List_NoId" />
         )
         VALUES (
-        #{name},#{type},#{defined},#{isDic},#{description},#{pid},#{dicKey},#{dicValue}
+          #{name},#{type},#{defined},#{isDic},#{description}
         )
     </insert>
 
@@ -66,15 +63,6 @@
             <if test="description != null and description != ''">
                 description = #{description,jdbcType=VARCHAR},
             </if>
-            <if test="pid != null">
-                pid = #{pid,jdbcType=INTEGER},
-            </if>
-            <if test="dicKey != null and dicKey != ''">
-                key = #{key,jdbcType=VARHCAR}
-            </if>
-            <if test="dicValue != null and dicValue != ''">
-                value = #{value,jdbcType=VARCHAR}
-            </if>
         </set>
         WHERE id = #{id}
     </update>
@@ -100,12 +88,5 @@
         FROM data_center_res
         <include refid="conditions" />
         ORDER BY id
-    </select>
-
-    <select id="getById" parameterType="int" resultType="com.tianyi.datacenter.server.entity.object.DataObject">
-        SELECT
-        <include refid="Base_Column_List" />
-        FROM data_center_res
-        WHERE id = #{id}
     </select>
 </mapper>

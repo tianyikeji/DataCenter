@@ -2,7 +2,6 @@ package com.tianyi.datacenter.server.service.storage.impl;
 
 import com.tianyi.datacenter.common.exception.DataCenterException;
 import com.tianyi.datacenter.server.service.storage.DataStorageDMLService;
-import com.tianyi.datacenter.server.service.storage.util.DBUtil;
 import com.tianyi.datacenter.server.service.storage.util.DMLUtil;
 import com.tianyi.datacenter.server.vo.DataStorageDMLVo;
 import com.tianyi.datacenter.server.vo.RequestVo;
@@ -28,11 +27,9 @@ import java.util.Map;
 @Service
 public class DataStorageDMLServiceImpl implements DataStorageDMLService {
 
+    //todo 修改成调用统一的数据库操作bean
     @Autowired
-    private DBUtil database;
-
-    @Autowired
-    private DMLUtil dmlUtil;
+    JdbcTemplate jdbcTemplate;
 
     /**
      * 生成DML执行语句服务
@@ -53,19 +50,14 @@ public class DataStorageDMLServiceImpl implements DataStorageDMLService {
             throw new DataCenterException("");
         } else {
             if ("U".equals(dmlType)) {
-                if (CollectionUtils.isEmpty(dmlVo.getCondition()) || CollectionUtils.isEmpty(dmlVo.getAttributes())) {
+                if (CollectionUtils.isEmpty(dmlVo.getCondition()) || CollectionUtils.isEmpty(dmlVo.getUpdateInfo())) {
                     //更新操作，更新信息不能为空
                     //TODO
                     throw new DataCenterException("");
                 }
-            }else if("C".equals(dmlType)){
-                if(CollectionUtils.isEmpty(dmlVo.getAttributes())){
+            }if("C".equals(dmlType)){
+                if(CollectionUtils.isEmpty(dmlVo.getUpdateInfo())){
                     //新增操作，字段信息不能为空
-                    //TODO
-                    throw new DataCenterException("");
-                }
-            } else if ("D".equals(dmlType)) {
-                if (CollectionUtils.isEmpty(dmlVo.getCondition())) {
                     //TODO
                     throw new DataCenterException("");
                 }
@@ -73,21 +65,21 @@ public class DataStorageDMLServiceImpl implements DataStorageDMLService {
         }
 
         //拼接sql语句
-        String sql = dmlUtil.generateDML(dmlVo, requestVo.getPageInfo());
+        String sql = DMLUtil.generateDML(dmlVo, requestVo.getPageInfo());
 
         Map<String,Object> rtnInfo = new HashMap<>();
         if("R".equals(dmlType)){
             //执行sql语句
-            List datas = database.executeQuery(sql);
+            List datas = executeDML(dmlType, sql);
 
             if (datas.size() < 1) {
-                return ResponseVo.fail("没有查询到数据");
+                //TODO
             } else {
                 rtnInfo.put("rtnData", datas);
                 return ResponseVo.success(rtnInfo);
             }
         }else{
-            int i = database.executeDML(dmlType, sql);
+            int i = executeDML(dmlType, sql);
             if(i<1){
                 //TODO
             }else{
@@ -96,6 +88,67 @@ public class DataStorageDMLServiceImpl implements DataStorageDMLService {
         }
         return null;
     }
+
+    /**
+     * 执行dml语句方法
+     * @author zhouwei
+     * 2018/11/21 17:06
+     * @param  operType 操作类型
+     * @param sql dml语句
+     * @return 返回指定类型的数据，查询返回list，其余返回int
+    */
+    private <T> T executeDML(String operType, String sql) {
+        Integer rtn = 0;
+        if ("R".equals(operType)) {
+            //查询操作
+            List datas = query(sql);
+            return (T)datas;
+        }else if("C".equals(operType)){
+            //新增操作
+            rtn = insert(sql);
+        }else if("U".equals(operType)){
+            rtn = update(sql);
+        }
+        return (T)rtn;
+    }
+
+    /**
+     * 执行更新语句
+     * @author xiayuan
+     * 2018/11/24
+     * @param sql update
+     * @return 1代表成功，其余代表失败
+     */
+    private int update(String sql) {
+        return jdbcTemplate.update(sql);
+    }
+    /**
+     * 执行插入语句
+     * @author zhouwei
+     * 2018/11/22 17:36
+     * @param sql insert语句
+     * @return 1代表成功，其余代表失败
+    */
+    private int insert(String sql) {
+        return 0;
+    }
+
+
+    /**
+     * 执行查询sql语句
+     * @author zhouwei
+     * 2018/11/21 17:08
+     * @param sql 查询语句
+     * @return  查询结果
+    */
+    private List query(String sql) {
+        //查询语句
+        List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
+
+        return result;
+    }
+
+
 
 }
 

@@ -21,8 +21,6 @@ public class DataObjectAttribute {
     private String isNull;
     private String isIncrement;
     private String indexType;
-    private String value;
-    private String oper;
 
     public String getIndexType() {
         return indexType;
@@ -134,21 +132,5 @@ public class DataObjectAttribute {
 
     public void setRule(String rule) {
         this.rule = rule;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public String getOper() {
-        return oper;
-    }
-
-    public void setOper(String oper) {
-        this.oper = oper;
     }
 }
