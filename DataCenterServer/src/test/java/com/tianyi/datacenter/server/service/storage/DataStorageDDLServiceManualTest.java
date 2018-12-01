@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -36,11 +36,19 @@ public class DataStorageDDLServiceManualTest {
         //add column info
         List<DataObjectAttribute> attributes = new ArrayList<>();
         DataObjectAttribute attribute = new DataObjectAttribute();
-        attribute.setColumnName("field3");
+        attribute.setColumnName("field8");
         attribute.setDescription("comment for field1");
         attribute.setJdbcType("int");
         attribute.setLength(10);
         attributes.add(attribute);
+        //alter column info
+        attribute = new DataObjectAttribute();
+        attribute.setColumnName("field7");
+        attribute.setDescription("comment for field1");
+        attribute.setJdbcType("int");
+        attribute.setLength(20);
+        attributes.add(attribute);
+
         ddlVo.setAttributes(attributes);
         //build request
         RequestVo<DataStorageDDLVo> requestVo = new RequestVo<>(ddlVo);

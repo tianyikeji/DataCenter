@@ -7,7 +7,6 @@ import com.tianyi.datacenter.server.vo.DataStorageDDLVo;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
-
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -30,7 +29,6 @@ public class DDLUtilUnitTest {
     @Before
     public void setUp() throws SQLException {
         MockitoAnnotations.initMocks(this);
-        when(database.getColumnsInfo(anyString())).thenReturn(new HashMap());
     }
     @Test
     public void createDDL() {
@@ -96,16 +94,28 @@ public class DDLUtilUnitTest {
         object.setDefined("Test");
         ddlVo.setDataObject(object);
 
+        /*
+        测试没有主键的情况
+         */
         //增加字段
-        List<DataObjectAttribute> attributes = new ArrayList<>();
+        List<DataObjectAttribute> addAttributes = new ArrayList<>();
         DataObjectAttribute attribute = new DataObjectAttribute();
         attribute.setColumnName("field1");
         attribute.setJdbcType("int");
         attribute.setLength(20);
-        attribute.setDescription("alter column field1");
-        attributes.add(attribute);
+        attribute.setDescription("add column field1");
+        addAttributes.add(attribute);
 
-        ddlVo.setAttributes(attributes);
+        ddlVo.setAddColumns(addAttributes);
+        //修改字段
+        List<DataObjectAttribute> alterAttributes = new ArrayList<>();
+        attribute = new DataObjectAttribute();
+        attribute.setColumnName("field1");
+        attribute.setJdbcType("int");
+        attribute.setLength(20);
+        attribute.setDescription("alter column field1");
+        alterAttributes.add(attribute);
+        ddlVo.setAlterColumns(alterAttributes);
 
         String sql = "";
         try {
@@ -114,7 +124,21 @@ public class DDLUtilUnitTest {
             e.printStackTrace();
         }
 
-        assertEquals("ALTER TABLE Test ADD COLUMN field1 int(20)  NOT NULL  COMMENT 'alter column field1' ", sql);
+        assertEquals("ALTER TABLE Test ADD COLUMN field1 int(20)  NOT NULL  COMMENT 'add column " +
+                "field1'  ,  CHANGE COLUMN field1  field1 int(20)  NOT NULL  COMMENT 'alter column field1' ", sql);
+
+        /*
+        测试有主键的情况
+         */
+        ddlVo.setPkInfo(new HashMap<>());
+        try {
+            sql = ddlUtil.generateDDL(ddlVo);
+        } catch (DataCenterException e) {
+            e.printStackTrace();
+        }
+        assertEquals("ALTER TABLE Test DROP PRIMARY KEY, ADD COLUMN field1 int(20)  NOT NULL  COMMENT 'add column " +
+                "field1'  ,  CHANGE COLUMN field1  field1 int(20)  NOT NULL  COMMENT 'alter column field1' ", sql);
+
 
     }
 }

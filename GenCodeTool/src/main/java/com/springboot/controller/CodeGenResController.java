@@ -45,8 +45,7 @@ public class CodeGenResController {
         String diskPath = (String) jsonParam.get("diskPath");
         String tableAnnotation = (String) jsonParam.get("tableAnnotation");
         String modelName = (String) jsonParam.get("modelName");
-        System.out.println(jsonParam.get("suffixs"));
-        String suffixs = (String) jsonParam.get("suffixs");
+        List<String> suffixs = (List<String>) jsonParam.get("suffixs");
         String objectList = (String) jsonParam.get("objectList");
         Integer resId = (Integer) jsonParam.get("resId");
         String isDic = (String) jsonParam.get("isDic");
@@ -62,7 +61,7 @@ public class CodeGenResController {
         for (int i = 0; i < list.size(); i++) {
             ColumnClass columnClass = new ColumnClass();
             columnClass.setColumnType(list.get(i).get("jdbcType"));
-            columnClass.setColumnComment(list.get(i).get("description"));
+            columnClass.setColumnComment(list.get(i).get("name"));
             columnClass.setColumnName(list.get(i).get("columnName"));
             columnClass.setChangeColumnName(changeTableName);
             columnClass.setResId(resId);
@@ -70,8 +69,9 @@ public class CodeGenResController {
             columnClass.setDicRes(list.get(i).get("dicRes"));
             columnClassList.add(columnClass);
         }
-        codeGenService.generate(tableName, diskPath, changeTableName, author, packageName, tableAnnotation, modelName, suffixs, columnClassList);
-
+        for(String suffix:suffixs){
+            codeGenService.generate(tableName, diskPath, changeTableName, author, packageName, tableAnnotation, modelName, suffix, columnClassList);
+        }
         return ResponseVo.success();
     }
 

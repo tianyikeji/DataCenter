@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.springboot.service.CodeGenService;
 import com.springboot.vo.ResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +27,19 @@ public class CodeGenerateController {
     }
     @ResponseBody
     @RequestMapping(value = "/code", method = RequestMethod.POST)
-    public ResponseVo generator(@RequestParam String author, @RequestParam String tableName, @RequestParam String packageName,
-                                @RequestParam String url, @RequestParam String user, @RequestParam String password,
-                                @RequestParam String diskPath, @RequestParam String tableAnnotation, @RequestParam String modelName,
-                                @RequestParam List<String> suffix) throws Exception {
+    @CrossOrigin
+    public ResponseVo generator(@RequestBody JSONObject jsonObject) throws Exception {
 
+        String author = (String)jsonObject.get("author");
+        String tableName = (String)jsonObject.get("tableName");
+        String password = (String)jsonObject.get("password");
+        String url = (String)jsonObject.get("url");
+        String user = (String)jsonObject.get("user");
+        String diskPath = (String)jsonObject.get("diskPath");
+        String packageName = (String)jsonObject.get("packageName");
+        String tableAnnotation = (String)jsonObject.get("tableAnnotation");
+        String modelName = (String)jsonObject.get("modelName");
+        List<String> suffix = (List<String>)jsonObject.get("suffix");
 
         String changeTableName = codeGenService.replaceUnderLineAndUpperCase(tableName);
         for(String file: suffix){
@@ -42,11 +51,12 @@ public class CodeGenerateController {
 
     @ResponseBody
     @RequestMapping(value = "/table", method = RequestMethod.POST)
-    public ResponseVo getTable(@RequestParam String author, @RequestParam String tableName, @RequestParam String packageName,
-                               @RequestParam String url, @RequestParam String user, @RequestParam String password,
-                               @RequestParam String diskPath, @RequestParam String tableAnnotation, @RequestParam String modelName) throws Exception {
-
-        List<String> list = codeGenService.generate(tableName, password, url, user, DRIVER, diskPath, "", author, packageName, tableAnnotation,modelName,"");
+    @CrossOrigin
+    public ResponseVo getTable(@RequestBody JSONObject jsonObject) throws Exception {
+        String url = (String)jsonObject.get("url");
+        String password = (String)jsonObject.get("password");
+        String user = (String)jsonObject.get("user");
+        List<String> list = codeGenService.generate("", password, url, user, DRIVER, "", "", "", "", "","","");
         return ResponseVo.success(list);
     }
 

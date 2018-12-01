@@ -20,7 +20,7 @@ import java.util.*;
 public class CodeGenServiceImpl implements CodeGenService{
     public void generate(String tableName, String diskPath, String changeTableName, String author, String packageName, String tableAnnotation, String modelName, String suffix, List<ColumnClass> columnClassList) throws Exception {
         try {
-            generateFile(suffix,diskPath,changeTableName,tableName,author,packageName,tableAnnotation,modelName,columnClassList);
+            generateFile(suffix,diskPath,changeTableName,tableName,author,packageName,tableAnnotation,modelName,columnClassList,1);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -43,7 +43,7 @@ public class CodeGenServiceImpl implements CodeGenService{
             }
             ResultSet resultSet = databaseMetaData.getColumns(null, "%", tableName, "%");
             List<ColumnClass> columnClassList = getColumns(resultSet);
-            generateFile(suffix, diskPath, changeTableName, tableName, author, packageName, tableAnnotation, modelName,columnClassList);
+            generateFile(suffix, diskPath, changeTableName, tableName, author, packageName, tableAnnotation, modelName,columnClassList,2);
             connection.close();
             return null;
         } catch (Exception e) {
@@ -115,7 +115,7 @@ public class CodeGenServiceImpl implements CodeGenService{
         return DriverManager.getConnection(url, user, password);
     }
 
-    private void generateFile(String suffix, String diskPath, String changeTableName, String tableName, String author, String packageName, String tableAnnotation, String modelName, List<ColumnClass> columnClassList) throws Exception {
+    private void generateFile(String suffix, String diskPath, String changeTableName, String tableName, String author, String packageName, String tableAnnotation, String modelName, List<ColumnClass> columnClassList,int flag) throws Exception {
         final String path = diskPath + changeTableName + suffix;
         Map<String, Object> dataMap = new HashMap<>();
         String templateName = "";
@@ -141,7 +141,11 @@ public class CodeGenServiceImpl implements CodeGenService{
                 templateName = "formService.ftl";
                 break;
             default:
-                templateName = "formVue.ftl";
+                if(flag == 1){
+                    templateName = "formVue.ftl";
+                }else{
+                    templateName = "Vue.ftl";
+                }
                 dataMap.put("model_column", columnClassList);
                 break;
         }

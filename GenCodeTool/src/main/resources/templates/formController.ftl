@@ -38,27 +38,27 @@ public class ${table_name}Controller {
             return ResponseVo.fail("查询失败");
         }
     }
-    /**
-    * 描述：分页查询列表
-    * @param ${table_name?uncap_first}
-    * @return ResponseVo
-    *
-    * @author ${author}
-    * @version
-    */
-    @RequestMapping(value = "get", method = RequestMethod.POST)
-    public ResponseVo listBy(@RequestBody ${table_name} ${table_name?uncap_first},Integer page,Integer pageSize) {
-        List<${table_name}> ${table_name?uncap_first}List = ${table_name?uncap_first}Service.listBy(${table_name?uncap_first});
-        int count = userService.countBy(map);
-        PageListVo vo = new PageListVo(page);
-        if(${table_name?uncap_first}List != null){
-            vo.setList(${table_name?uncap_first}List);
-            vo.setTotal(count);
-            return ResponseVo.success(vo);
-        }else{
-            return ResponseVo.fail("查询失败");
-        }
-    }
+    <#--/**-->
+    <#--* 描述：分页查询列表-->
+    <#--* @param ${table_name?uncap_first}-->
+    <#--* @return ResponseVo-->
+    <#--*-->
+    <#--* @author ${author}-->
+    <#--* @version-->
+    <#--*/-->
+    <#--@RequestMapping(value = "get", method = RequestMethod.POST)-->
+    <#--public ResponseVo listBy(@RequestBody ${table_name} ${table_name?uncap_first},Integer page,Integer pageSize) {-->
+        <#--List<${table_name}> ${table_name?uncap_first}List = ${table_name?uncap_first}Service.listBy(${table_name?uncap_first});-->
+        <#--int count = ${table_name?uncap_first}Service.countBy(map);-->
+        <#--PageListVo vo = new PageListVo(page);-->
+        <#--if(${table_name?uncap_first}List != null){-->
+            <#--vo.setList(${table_name?uncap_first}List);-->
+            <#--vo.setTotal(count);-->
+            <#--return ResponseVo.success(vo);-->
+        <#--}else{-->
+            <#--return ResponseVo.fail("查询失败");-->
+        <#--}-->
+    <#--}-->
 
     /**
     * 描述:新增${table_name}

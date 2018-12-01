@@ -10,9 +10,7 @@ import com.tianyi.datacenter.server.vo.ResponseVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -41,9 +39,8 @@ public class ResourceController {
      * 2018/11/19 16:39
      */
 
-    @RequestMapping("get")
-    @CrossOrigin
-    public ResponseVo getResources(Integer dataObjectId, String type,String isDic, String keyword, PageListVo pageListVo) {
+    @RequestMapping(value = "get",method = RequestMethod.GET)
+    public ResponseVo getResources(@RequestParam(required = false) Integer dataObjectId,@RequestParam(required = false) String type,@RequestParam(required = false) String isDic,@RequestParam(required = false) String keyword,@RequestParam(required = false) PageListVo pageListVo) {
         RequestVo<Map> requestVo = resourceService.integrateData(dataObjectId, type,isDic, keyword, pageListVo);
         ResponseVo responseVo = ResponseVo.fail("数据查询失败");
         try {

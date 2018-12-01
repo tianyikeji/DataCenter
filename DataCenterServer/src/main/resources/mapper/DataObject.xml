@@ -8,13 +8,16 @@
         <result column="defined" property="defined" jdbcType="VARCHAR" />
         <result column="isDic" property="isDic" jdbcType="VARCHAR" />
         <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="pid" property="pid" jdbcType="INTEGER" />
+        <result column="dicKey" property="dicKey" jdbcType="VARCHAR" />
+        <result column="dicValue" property="dicValue" jdbcType="VARCHAR" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,type,defined,isDic,description
+        id,name,type,defined,isDic,description,pid,dicKey,dicValue
     </sql>
     <sql id="Base_Column_List_NoId">
-        name,type,defined,isDic,description
+        name,type,defined,isDic,description,pid,dicKey,dicValue
     </sql>
 
     <sql id="conditions">
@@ -28,15 +31,21 @@
             <if test="name != null and name != ''">
                 and name like binary concat('%',#{name,jdbcType=VARCHAR},'%')
             </if>
+            <if test="checkname != null and checkname != ''">
+                and name = #{checkname,jdbcType=VARCHAR}
+            </if>
+            <if test="defined != null and defined != ''">
+                and defined = #{defined,jdbcType=VARCHAR}
+            </if>
         </where>
     </sql>
 
     <insert id="insert" parameterType="com.tianyi.datacenter.server.entity.object.DataObject" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO data_center_res(
-          <include refid="Base_Column_List_NoId" />
+        <include refid="Base_Column_List_NoId" />
         )
         VALUES (
-          #{name},#{type},#{defined},#{isDic},#{description}
+        #{name},#{type},#{defined},#{isDic},#{description},#{pid},#{dicKey},#{dicValue}
         )
     </insert>
 
@@ -63,6 +72,15 @@
             <if test="description != null and description != ''">
                 description = #{description,jdbcType=VARCHAR},
             </if>
+            <if test="pid != null">
+                pid = #{pid,jdbcType=INTEGER},
+            </if>
+            <if test="dicKey != null and dicKey != ''">
+                dicKey = #{dicKey,jdbcType=VARCHAR},
+            </if>
+            <if test="dicValue != null and dicValue != ''">
+                dicValue = #{dicValue,jdbcType=VARCHAR},
+            </if>
         </set>
         WHERE id = #{id}
     </update>
@@ -88,5 +106,12 @@
         FROM data_center_res
         <include refid="conditions" />
         ORDER BY id
+    </select>
+
+    <select id="getById" parameterType="int" resultType="com.tianyi.datacenter.server.entity.object.DataObject">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM data_center_res
+        WHERE id = #{id}
     </select>
 </mapper>

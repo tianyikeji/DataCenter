@@ -9,17 +9,17 @@ import java.util.List;
 */
 public interface I${table_name}Service{
 
+    <#--/**-->
+    <#--* 分页查询${table_annotation}-->
+    <#--* @param ${table_name?uncap_first}-->
+    <#--* @return-->
+    <#--*-->
+    <#--* @author ${author}-->
+    <#--* @version-->
+    <#--* */-->
+    <#--List<${table_name}> listBy(${table_name} ${table_name?uncap_first});-->
     /**
-    * 分页查询${table_annotation}
-    * @param ${table_name?uncap_first}
-    * @return
-    *
-    * @author ${author}
-    * @version
-    * */
-    List<${table_name}> listBy(${table_name} ${table_name?uncap_first});
-    /**
-    * 查询${table_annotation}
+    * 不分页查询${table_annotation}
     * @param ${table_name?uncap_first}
     * @return
     *
@@ -54,5 +54,7 @@ public interface I${table_name}Service{
     * @version
     * */
     int updateBy(${table_name} ${table_name?uncap_first});
+
+    <#--int countBy();-->
 
 }

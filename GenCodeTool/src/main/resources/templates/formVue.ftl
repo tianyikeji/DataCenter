@@ -44,7 +44,7 @@
             <#if model_column?exists>
                 <#assign i = 0>
                 <#list model_column as model>
-                    <#if model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float'>
+                    <#if model.type != '字典' && (model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float')>
                         <el-form-item label="${model.columnComment}" prop="${model.columnName}">
                             <el-input v-model="viewSearch.data.${model.columnName}"
                                       placeholder="请输入${model.columnComment}"></el-input>
@@ -65,7 +65,7 @@
                             <el-select v-model="viewSearch.data.${model.columnName}"
                                        placeholder="请选择${model.columnComment}">
                                 <el-option
-                                        v-for="item in plugs.select${i}"
+                                        v-for="item in plugs.list${i}"
                                         :key="item.value"
                                         :label="item.label"
                                         :value="item.value">
@@ -85,9 +85,9 @@
         <el-dialog title="创建数据对象" :visible.sync="viewAdd.show" width="30%" id="viewAdd">
             <el-form :model="viewAdd.data" label-position="right" label-width="120px">
             <#if model_column?exists>
-                <#assign i = 0>
+                <#assign a = 0>
                 <#list model_column as model>
-                    <#if model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float'>
+                    <#if model.type != '字典' && (model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float')>
                         <el-form-item label="${model.columnComment}" prop="${model.columnName}">
                             <el-input v-model="viewAdd.data.${model.columnName}"
                                       placeholder="请输入${model.columnComment}"></el-input>
@@ -103,12 +103,12 @@
                             </el-date-picker>
                         </el-form-item>
                     <#elseif model.type = '字典'>
-                        <#assign i = i + 1>
+                        <#assign a = a + 1>
                         <el-form-item label="${model.columnComment}" prop="${model.columnName}">
                             <el-select v-model="viewAdd.data.${model.columnName}"
                                        placeholder="请选择${model.columnComment}">
                                 <el-option
-                                        v-for="item in plugs.select${i}"
+                                        v-for="item in plugs.list${a}"
                                         :key="item.value"
                                         :label="item.label"
                                         :value="item.value">
@@ -128,9 +128,9 @@
         <el-dialog title="修改数据集属性" :visible.sync="viewEdit.show" width="30%" id="viewEdit">
             <el-form :model="viewEdit.data" label-position="right" label-width="120px">
             <#if model_column?exists>
-                <#assign i = 0>
+                <#assign j = 0>
                 <#list model_column as model>
-                    <#if model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float'>
+                    <#if model.type != '字典' && (model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float')>
                         <el-form-item label="${model.columnComment}" prop="${model.columnName}">
                             <el-input v-model="viewEdit.data.${model.columnName}"
                                       placeholder="请输入${model.columnComment}"></el-input>
@@ -146,12 +146,12 @@
                             </el-date-picker>
                         </el-form-item>
                     <#elseif model.type = '字典'>
-                        <#assign i = i + 1>
+                        <#assign j = j + 1>
                         <el-form-item label="${model.columnComment}" prop="${model.columnName}">
                             <el-select v-model="viewEdit.data.${model.columnName}"
                                        placeholder="请选择${model.columnComment}">
                                 <el-option
-                                        v-for="item in plugs.select${i}"
+                                        v-for="item in plugs.list${j}"
                                         :key="item.value"
                                         :label="item.label"
                                         :value="item.value">
@@ -259,13 +259,13 @@
             }
         ,
             select:{
-            <#assign i = 0>
+            <#assign k = 0>
             <#list model_column as model>
-                <#assign i = i + 1>
-                <#if model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float'>
+                <#assign k = k + 1>
+                <#if model.type != '字典' && (model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float')>
                 <#elseif model.columnType ='DATETIME'||model.columnType = 'TIMESTAMP'|| model.columnType = 'datatime'|| model.columnType = 'timestamp'|| model.columnType = 'DATE'|| model.columnType = 'date'>
                 <#elseif model.type = '字典'>
-                    list${i} : this.dataList
+                    list${k} : this.dataList<#if model_has_next>,</#if>
                 </#if>
             </#list>
             }
@@ -278,29 +278,30 @@
         },
     mounted(){
     <#if model_column?exists>
-        <#assign i=0>
+        <#assign l=0>
         <#list model_column as model>
-            <#assign i = i+1>
-            <#if model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float'>
+            <#assign l = l+1>
+            <#if model.type != '字典' && (model.columnType = 'VARCHAR' || model.columnType = 'TEXT'|| model.columnType = 'text'|| model.columnType = 'varchar' || model.columnType = 'int' || model.columnType = 'INT' || model.columnType = 'tinyint' || model.columnType = 'TINYINT'|| model.columnType = 'FLOAT'||model.columnType = 'float')>
             <#elseif model.columnType ='DATETIME'||model.columnType = 'TIMESTAMP'|| model.columnType = 'datatime'|| model.columnType = 'timestamp'|| model.columnType = 'DATE'|| model.columnType = 'date'>
-            <#elseif model.type = '字典'>
-                axios.post(this.base_url + '/resource/get', {dataObjectId:${model.dicRes}).then(res = > {
+            <#elseif model.type = '字典' && model.dicRes?exists && model.dicRes != ''>
+                axios.post(this.base_url + '/data/object/list', {tableName:'${model.dicRes}',type:'',isDic:'',pageInfo:this.viewTable.pageInfo}).then(res => {
                     if(res.data.success
             )
                 {
-                    var label = res.data.data.list[0].dicKey;
-                    var val = res.data.data.list[0].dicValue;
+                    var label = res.data.data.list[${l}].dicKey;
+                    var val = res.data.data.list[${l}].dicValue;
                     axios.post(
                             this.base_url + '/data/retrieve',
                             {
-                                dataObjectId:${model.dicRes},
+                                name:${model.dicRes},
+                                dataObjectId:0,
                                 condition: [],
                                 pageInfo: {
                                     page: 0,
                                     pageSize: 0
                                 }
                             }
-                    ).then(resp = > {
+                    ).then(resp => {
                         if(resp.data.success
                 )
                     {
@@ -313,7 +314,6 @@
                         }
                     }
 
-                }
                 else
                     {
                         console.log(res.data.message);
@@ -321,13 +321,13 @@
                 }
             )
             .
-                catch(err = > {console.log(err);
+                catch(err => {console.log(err);
             })
                 ;
 
 
             }
-                else{console.log(res.data.message);})
+                else{console.log(res.data.message);}})
 
             </#if>
         </#list>
@@ -345,6 +345,7 @@
         {
             console.log("edit", item, index);
             this.viewEdit.data = Object.assign({}, item);
+            this.viewEdit.old = Object.assign({}, item);
             this.viewEdit.index = index;
             this.viewEdit.show = true;
         }
@@ -356,23 +357,30 @@
         editSingle()
         {
             axios.post('/data/update', {
-                dataObejctId: this.dataObejctId,
-                data: this.viewEdit.data,
-                condition: [{key: 'id', condition: 'equals', value: this.viewEdit.data.id}]
+                dataObjectId: this.dataObjectId,
+                data: this.filterNumber(this.viewEdit.data),
+                condition: [
+                    <#list model_column as model>
+                        {key: '${model.columnName}', condition: 'equals', value: this.viewEdit.old.${model.columnName}}<#if model_has_next>,</#if>
+                    </#list>]
             })
-                    .then(res = > {
+                    .then(res => {
                 if(res.data.success
         )
             {
                 Message.success("修改成功");
-                this.$set(this.viewTable.data, this.viewEdit.index, this.viewEdit.data);
+                this.getTableData({
+                    pageInfo: this.viewTable.pageInfo,
+                    condition: this.changeParams(this.viewSearch.data),
+                    dataObjectId: this.dataObjectId
+                });
             }
         else
             {
                 Message.error('修改失败。')
             }
         }).
-            catch(err = > {Message.error('网络错误，修改失败。')
+            catch(err => {Message.error('网络错误，修改失败。')
         })
             this.viewEdit.show = false;
         }
@@ -386,6 +394,7 @@
         {
             console.log("delet", item);
             this.viewDelet.item = item;
+            this.viewDelet.old = Object.assign({}, item);
             this.viewDelet.index = index;
             this.viewDelet.show = true;
         }
@@ -398,9 +407,12 @@
         {
             axios.post('/data/delete', {
                 dataObjectId: this.dataObjectId,
-                condition: [{key: 'id', condition: 'equals', value: this.viewDelet.item.id}]
+                condition: [
+                <#list model_column as model>
+                    {key: '${model.columnName}', condition: 'equals', value: this.viewDelet.old.${model.columnName}}<#if model_has_next>,</#if>
+                </#list>]
             })
-                    .then(res = > {
+                    .then(res => {
                 if(res.data.success
         )
             {
@@ -416,7 +428,7 @@
                 Message.error('删除失败')
             }
         }).
-            catch(err = > {Message.error('网络错误，删除失败')
+            catch(err => {Message.error('网络错误，删除失败')
         })
             this.viewDelet.show = false;
         }
@@ -442,9 +454,9 @@
             var params = Object.assign({}, this.viewAdd.data);
             axios.post('/data/add', {
                 dataObjectId: this.dataObjectId,
-                data: params
+                data: this.filterNumber(params)
             })
-                    .then(res = > {
+                    .then(res => {
                 if(res.data.success
         )
             {
@@ -456,7 +468,7 @@
                 Message.error('添加失败。')
             }
         }).
-            catch(err = > {Message.error('添加失败，网络错误。')
+            catch(err => {Message.error('添加失败，网络错误。')
         })
             for (var i in this.viewAdd.data) {
                 this.viewAdd.data[i] = "";
@@ -476,19 +488,24 @@
     ,
         getTableData(params)
         {
+            var that = this;
             axios.post('/data/retrieve', params)
-                    .then(res = > {
+                    .then(res => {
                 if(res.data.success
         )
             {
-                this.viewTable.data = res.data.data.rtnData
+                that.viewTable.data = res.data.data.rtnData;
+                that.viewTable.filter = {};
+                for (var index in this.viewTable.data[0]) {
+                    that.viewTable.filter[index] = typeof ( that.viewTable.data[0][index]);
+                }
             }
         else
             {
                 Message.error('查询表格数据错误' + res.data.message)
             }
         }).
-            catch(err = > {Message.error('查询表格数据出错，网络错误。')
+            catch(err => {Message.error('查询表格数据出错，网络错误。')
         })
             ;
         }
@@ -510,14 +527,31 @@
         changeParams(params)
         {
             var condition = [];
-            for (index in params) {
+            for (var index in params) {
                 var obj = {};
-                obj['key'] = index;
-                obj['condition'] = 'equals';
-                obj['value'] = params[index];
-                condition.push(obj);
+                if(params[index]===""||params[index]===undefined||params[index]===null){
+                    continue
+                }else{
+                    obj['key'] = index;
+                    obj['condition'] = 'equals';
+                    if (this.viewTable.filter[index]=="number"){
+                        obj['value'] =parseInt( params[index]);
+                    } else{
+                        obj['value'] = params[index];
+                    }
+                    condition.push(obj);
+                }
             }
             return condition;
+        },
+        //判断格式 返回数字类型
+        filterNumber(data){
+            for(var i in data){
+                if (this.viewTable.filter[i]=="number"){
+                    data[i] = parseInt(data[i]);
+                }
+            }
+            return data;
         }
     }
     }

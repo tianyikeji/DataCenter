@@ -1,0 +1,415 @@
+2018-11-30 09:12:02.755 default [main] INFO  c.t.d.s.DataCenterServerApplication - Starting DataCenterServerApplication on xiayuan with PID 13972 (D:\helmet\DataCenterNew\DataCenterServer\target\classes started by xiayuan in D:\helmet\DataCenterNew)
+2018-11-30 09:12:02.764 default [main] DEBUG c.t.d.s.DataCenterServerApplication - Running with Spring Boot v2.0.6.RELEASE, Spring v5.0.10.RELEASE
+2018-11-30 09:12:02.765 default [main] INFO  c.t.d.s.DataCenterServerApplication - No active profile set, falling back to default profiles: default
+2018-11-30 09:12:06.977 default [main] INFO  c.t.d.s.DataCenterServerApplication - Started DataCenterServerApplication in 4.977 seconds (JVM running for 7.452)
+2018-11-30 09:12:32.425 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id DESC limit ?,? 
+2018-11-30 09:12:32.440 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==> Parameters: 0(Integer), 100(Integer)
+2018-11-30 09:12:32.451 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - <==      Total: 6
+2018-11-30 09:12:32.453 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==>  Preparing: SELECT COUNT(id) FROM data_center_res 
+2018-11-30 09:12:32.453 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==> Parameters: 
+2018-11-30 09:12:32.454 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - <==      Total: 1
+2018-11-30 09:13:05.852 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 09:13:05.852 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 09:13:05.855 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 09:15:47.887 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 09:15:47.887 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 09:15:47.888 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 09:30:16.857 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id DESC limit ?,? 
+2018-11-30 09:30:16.857 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==> Parameters: 0(Integer), 100(Integer)
+2018-11-30 09:30:16.861 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - <==      Total: 6
+2018-11-30 09:30:16.861 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==>  Preparing: SELECT COUNT(id) FROM data_center_res 
+2018-11-30 09:30:16.861 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==> Parameters: 
+2018-11-30 09:30:16.864 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - <==      Total: 1
+2018-11-30 09:30:26.145 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 09:30:26.145 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 38(Integer)
+2018-11-30 09:30:26.146 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 1
+2018-11-30 09:30:26.148 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res WHERE isDic = ? ORDER BY id 
+2018-11-30 09:30:26.149 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: true(String)
+2018-11-30 09:30:26.151 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 09:33:38.876 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id DESC limit ?,? 
+2018-11-30 09:33:38.876 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==> Parameters: 0(Integer), 100(Integer)
+2018-11-30 09:33:38.877 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - <==      Total: 6
+2018-11-30 09:33:38.878 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==>  Preparing: SELECT COUNT(id) FROM data_center_res 
+2018-11-30 09:33:38.878 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==> Parameters: 
+2018-11-30 09:33:38.879 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - <==      Total: 1
+2018-11-30 09:43:15.746 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 09:43:15.746 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 09:43:15.748 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 09:43:26.738 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id DESC limit ?,? 
+2018-11-30 09:43:26.738 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - ==> Parameters: 0(Integer), 100(Integer)
+2018-11-30 09:43:26.739 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.listBy - <==      Total: 6
+2018-11-30 09:43:26.740 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==>  Preparing: SELECT COUNT(id) FROM data_center_res 
+2018-11-30 09:43:26.740 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - ==> Parameters: 
+2018-11-30 09:43:26.740 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.DataObjectDao.countBy - <==      Total: 1
+2018-11-30 13:36:08.278 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 13:36:08.278 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 13:36:08.279 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 13:56:26.635 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 13:56:26.635 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 13:56:26.637 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 13:58:36.099 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 13:58:36.101 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 13:58:36.103 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 13:59:01.186 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 13:59:01.187 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 13:59:01.188 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:00:32.815 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:00:32.815 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:00:32.817 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:00:34.817 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:00:34.818 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:00:34.818 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:01:04.863 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:01:04.863 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:01:04.864 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:01:19.937 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:01:19.937 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:01:19.938 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:11:31.181 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:11:31.181 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:11:31.182 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:11:50.554 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:11:50.554 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:11:50.555 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:12:34.558 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:12:34.558 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:12:34.559 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:12:38.525 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:12:38.525 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:12:38.526 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:13:08.741 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:13:08.741 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:13:08.742 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:14:51.259 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:14:51.259 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:14:51.260 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:26:32.715 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:26:32.715 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:26:32.716 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:33:10.686 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:33:10.687 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:33:10.687 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:34:02.396 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:34:02.397 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:34:02.398 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:39:53.484 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:39:53.485 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:39:53.486 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:43:20.626 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:43:20.626 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:43:20.627 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:43:33.223 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:43:33.223 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:43:33.224 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:47:26.303 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:47:26.304 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:47:26.305 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:47:37.069 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:47:37.070 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:47:37.072 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 14:49:07.407 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:49:07.407 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:49:07.408 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:49:09.446 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 14:49:09.446 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 14:49:09.447 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 14:49:23.777 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 14:49:23.777 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 14:49:23.778 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 15:14:32.220 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:14:32.220 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:14:32.221 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:14:35.134 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:14:35.134 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:14:35.135 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:14:54.228 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:14:54.229 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:14:54.229 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:15:17.658 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:15:17.658 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:15:17.659 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:16:33.535 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:16:33.536 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:16:33.536 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:16:45.663 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:16:45.663 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:16:45.664 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:17:05.330 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:17:05.330 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:17:05.330 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:17:32.233 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:17:32.233 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:17:32.234 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:19:44.187 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:19:44.187 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:19:44.188 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:19:47.537 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:19:47.538 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:19:47.538 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:20:08.030 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:20:08.030 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:20:08.031 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:20:16.852 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:20:16.852 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:20:16.853 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:32:39.763 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:32:39.763 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:32:39.764 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:45:38.272 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:45:38.273 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:45:38.274 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:46:40.755 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:46:40.755 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:46:40.756 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:46:55.363 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:46:55.363 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:46:55.365 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:47:56.266 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:47:56.267 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:47:56.267 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:48:30.869 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:48:30.869 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:48:30.870 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:49:58.695 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:49:58.695 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:49:58.695 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:54:03.758 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:54:03.758 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:54:03.758 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:54:36.405 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:54:36.405 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:54:36.406 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:54:43.147 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:54:43.147 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:54:43.148 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:54:54.013 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:54:54.013 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:54:54.014 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:54:58.797 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:54:58.797 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:54:58.797 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:55:09.923 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:55:09.923 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:55:09.923 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:55:32.838 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:55:32.838 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:55:32.838 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:55:56.877 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:55:56.878 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:55:56.879 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:56:05.544 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:56:05.544 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:56:05.545 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:56:50.815 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:56:50.815 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:56:50.816 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:57:39.516 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:57:39.516 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:57:39.517 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 15:57:44.480 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 15:57:44.480 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 15:57:44.481 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:00:44.522 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:00:44.522 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:00:44.523 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:00:50.933 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:00:50.933 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:00:50.934 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:01:17.797 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:01:17.798 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:01:17.798 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:01:25.610 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:01:25.610 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:01:25.611 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:02:01.114 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:02:01.115 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:02:01.115 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:03:36.359 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:03:36.359 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:03:36.360 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:03:56.578 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:03:56.578 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:03:56.579 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 6
+2018-11-30 16:10:16.376 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:10:16.376 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:10:16.377 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 7
+2018-11-30 16:10:20.308 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:10:20.308 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:10:20.308 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 7
+2018-11-30 16:11:56.571 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:11:56.571 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:11:56.571 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 7
+2018-11-30 16:12:37.927 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:12:37.927 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:12:37.927 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 7
+2018-11-30 16:27:55.100 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:27:55.100 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:27:55.101 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:28:47.827 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:28:47.827 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:28:47.828 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:31:34.792 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:31:34.792 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:31:34.793 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:31:46.253 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:31:46.253 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:31:46.253 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:32:07.692 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:32:07.692 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:32:07.693 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:36:31.335 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:36:31.337 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:36:31.338 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:43:28.637 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 16:43:28.638 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 16:43:28.639 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 16:44:21.637 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:44:21.637 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:44:21.638 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:44:39.264 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:44:39.265 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:44:39.265 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 8
+2018-11-30 16:48:48.536 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:48:48.536 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:48:48.537 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 16:49:27.879 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 16:49:27.879 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 16:49:27.880 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 1
+2018-11-30 16:57:32.153 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 16:57:32.154 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 16:57:32.154 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 16:57:55.431 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 16:57:55.431 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 16:57:55.432 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 2
+2018-11-30 17:12:39.138 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:12:39.138 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:12:39.139 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:17:07.124 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:17:07.124 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:17:07.125 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:18:43.894 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:18:43.895 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:18:43.895 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:19:36.852 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:19:36.853 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:19:36.853 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:19:43.635 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:19:43.635 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:19:43.635 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:19:47.991 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:19:47.992 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:19:47.992 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:21:07.812 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:21:07.812 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:21:07.813 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:21:22.947 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:21:22.947 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:21:22.948 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:21:24.605 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:21:24.605 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:21:24.606 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:22:48.075 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:22:48.075 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:22:48.076 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:23:19.071 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:23:19.071 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:23:19.072 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:24:10.328 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:24:10.328 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:24:10.329 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:24:15.879 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:24:15.879 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:24:15.880 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:24:27.691 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:24:27.691 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:24:27.693 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:24:37.983 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:24:37.983 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:24:37.984 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:24:41.745 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:24:41.745 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:24:41.745 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:25:09.244 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:25:09.245 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:25:09.246 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:25:35.170 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:25:35.171 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:25:35.171 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:26:00.163 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:26:00.163 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:26:00.164 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:26:04.362 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:26:04.362 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:26:04.362 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:29:20.902 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:29:20.902 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:29:20.903 default [http-nio-19081-exec-2] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:30:21.434 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:30:21.434 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:30:21.436 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:30:43.830 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:30:43.830 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:30:43.831 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:30:55.411 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:30:55.411 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:30:55.412 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:33:21.839 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:33:21.839 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:33:21.840 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:33:33.295 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:33:33.296 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:33:33.296 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:34:16.896 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:34:16.897 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:34:16.898 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:37:12.018 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:37:12.019 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:37:12.020 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:37:39.592 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:37:39.592 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:37:39.593 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:38:02.067 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:38:02.067 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:38:02.068 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:38:28.306 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:38:28.307 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:38:28.307 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:38:32.498 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:38:32.498 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:38:32.499 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:38:35.322 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:38:35.322 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:38:35.323 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:40:47.026 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:40:47.026 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:40:47.027 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:41:13.538 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:41:13.538 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:41:13.539 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:41:18.323 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:41:18.323 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:41:18.324 default [http-nio-19081-exec-7] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:41:21.402 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:41:21.403 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:41:21.403 default [http-nio-19081-exec-10] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:42:58.779 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 17:42:58.779 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 17:42:58.779 default [http-nio-19081-exec-1] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 9
+2018-11-30 17:43:25.696 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:43:25.696 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:43:25.697 default [http-nio-19081-exec-8] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:45:51.445 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:45:51.445 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:45:51.446 default [http-nio-19081-exec-4] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:46:04.009 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:46:04.009 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:46:04.010 default [http-nio-19081-exec-5] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 17:47:32.435 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 17:47:32.435 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 17:47:32.436 default [http-nio-19081-exec-6] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3
+2018-11-30 19:36:52.113 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,name,type,defined,isDic,description,pid,dicKey,dicValue FROM data_center_res ORDER BY id 
+2018-11-30 19:36:52.113 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 
+2018-11-30 19:36:52.115 default [http-nio-19081-exec-9] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 10
+2018-11-30 19:37:52.188 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==>  Preparing: SELECT id,resId,columnName,jdbcType,length,name,description,type,dicRes,rule,isKey,isNull,isIncrement,indexType FROM data_center_attr WHERE resId = ? ORDER BY id 
+2018-11-30 19:37:52.188 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - ==> Parameters: 12(Integer)
+2018-11-30 19:37:52.189 default [http-nio-19081-exec-3] DEBUG c.t.d.s.d.o.D.listByNoPage - <==      Total: 3

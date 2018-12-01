@@ -38,10 +38,10 @@
 
     <insert id="insert" parameterType="com.tianyi.datacenter.server.entity.object.DataObjectAttribute" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO data_center_attr(
-          <include refid="Base_Column_List_NoId" />
+        <include refid="Base_Column_List_NoId" />
         )
         VALUES (
-          #{resId},#{columnName},#{jdbcType},#{length},#{name},#{description},#{type},#{dicRes},#{rule},#{isKey},#{isNull},#{isIncrement}
+        #{resId},#{columnName},#{jdbcType},#{length},#{name},#{description},#{type},#{dicRes},#{rule},#{isKey},#{isNull},#{isIncrement},#{indexType}
         )
     </insert>
 
@@ -117,5 +117,12 @@
         FROM data_center_attr
         <include refid="conditions" />
         ORDER BY id
+    </select>
+
+    <select id="getById" parameterType="int" resultType="com.tianyi.datacenter.server.entity.object.DataObjectAttribute">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM data_center_attr
+        WHERE id = #{id}
     </select>
 </mapper>
