@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 /**
- * 描述：代码生成器
+ * 描述：代码生成器by数据库
  * Created by xy on 2018/10/30.
  */
 @Controller
@@ -42,6 +42,7 @@ public class CodeGenerateController {
         List<String> suffix = (List<String>)jsonObject.get("suffix");
 
         String changeTableName = codeGenService.replaceUnderLineAndUpperCase(tableName);
+        //会多选，所以遍历生成
         for(String file: suffix){
             codeGenService.generate(tableName, password, url, user, DRIVER, diskPath, changeTableName, author, packageName, tableAnnotation, modelName,file);
         }

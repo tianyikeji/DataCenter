@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 描述：代码生成器
+ * 描述：代码生成器by资源中心
  * Created by xy on 2018/10/30.
  */
 @Controller
@@ -57,6 +57,7 @@ public class CodeGenResController {
         String listString = jsonObject.getString("list");
         List<Map<String, String>> list = JSON.parseObject(listString, new TypeReference<List>() {
         });
+        //遍历拿到的objectList字符串，将需要的值存入到字段对象的list中
         List<ColumnClass> columnClassList = new ArrayList<>(list.size());
         for (int i = 0; i < list.size(); i++) {
             ColumnClass columnClass = new ColumnClass();
