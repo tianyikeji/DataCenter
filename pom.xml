@@ -13,6 +13,7 @@
         <module>DataCenterServer</module>
         <module>DataCenterFeignServer</module>
         <module>DataCenterZuulServer</module>
+        <module>GenCodeTool</module>
     </modules>
 
     <parent>
