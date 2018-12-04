@@ -4,6 +4,7 @@ import com.tianyi.datacenter.server.entity.object.DataObject;
 import com.tianyi.datacenter.server.entity.object.DataObjectAttribute;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 数据存储模块执行DDL接口Vo
@@ -15,6 +16,10 @@ public class DataStorageDDLVo {
     private String ddlType;
     private DataObject dataObject;
     private List<DataObjectAttribute> attributes;
+    private List<DataObjectAttribute> addColumns;
+    private List<DataObjectAttribute> alterColumns;
+    private List<DataObjectAttribute> dropColumns;
+    private Map<String, Object> pkInfo;
 
     public String getDdlType() {
         return ddlType;
@@ -38,5 +43,37 @@ public class DataStorageDDLVo {
 
     public void setAttributes(List<DataObjectAttribute> attributes) {
         this.attributes = attributes;
+    }
+
+    public void setAddColumns(List<DataObjectAttribute> addColumns) {
+        this.addColumns = addColumns;
+    }
+
+    public List<DataObjectAttribute> getAddColumns() {
+        return addColumns;
+    }
+
+    public List<DataObjectAttribute> getAlterColumns() {
+        return alterColumns;
+    }
+
+    public void setAlterColumns(List<DataObjectAttribute> alterColumns) {
+        this.alterColumns = alterColumns;
+    }
+
+    public void setDropColumns(List<DataObjectAttribute> dropColumns) {
+        this.dropColumns = dropColumns;
+    }
+
+    public List<DataObjectAttribute> getDropColumns() {
+        return dropColumns;
+    }
+
+    public Map<String, Object> getPkInfo() {
+        return pkInfo;
+    }
+
+    public void setPkInfo(Map<String, Object> pkInfo) {
+        this.pkInfo = pkInfo;
     }
 }

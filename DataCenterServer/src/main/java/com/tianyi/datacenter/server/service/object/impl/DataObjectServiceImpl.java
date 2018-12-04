@@ -63,4 +63,13 @@ public class DataObjectServiceImpl implements DataObjectService {
         return responseVo;
     }
 
+    @Override
+    public DataObject getById(int id){
+        return dataObjectDao.getById(id);
+    }
+
+    @Override
+    public List<DataObject> listNoPage(Map<String, Object> param){
+        return dataObjectDao.listByNoPage(param);
+    }
 }

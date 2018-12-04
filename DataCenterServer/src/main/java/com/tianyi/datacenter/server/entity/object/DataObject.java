@@ -13,6 +13,33 @@ public class DataObject {
     private String defined;
     private String isDic;
     private String description;
+    private int pid;
+    private String dicKey;
+    private String dicValue;
+
+    public int getPid() {
+        return pid;
+    }
+
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+
+    public String getDicKey() {
+        return dicKey;
+    }
+
+    public void setDicKey(String dicKey) {
+        this.dicKey = dicKey;
+    }
+
+    public String getDicValue() {
+        return dicValue;
+    }
+
+    public void setDicValue(String dicValue) {
+        this.dicValue = dicValue;
+    }
 
     public int getId() {
         return id;

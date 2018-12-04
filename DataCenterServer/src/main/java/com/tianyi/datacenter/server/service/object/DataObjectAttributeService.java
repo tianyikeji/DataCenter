@@ -5,6 +5,7 @@ import com.tianyi.datacenter.server.entity.object.DataObjectAttribute;
 import com.tianyi.datacenter.server.vo.RequestVo;
 import com.tianyi.datacenter.server.vo.ResponseVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,5 +20,9 @@ public interface DataObjectAttributeService {
     int update(DataObjectAttribute dataObjectAttribute);
 
     ResponseVo list(RequestVo<Map> requestVo) throws DataCenterException;
+
+    List<DataObjectAttribute> listNoPage(Map<String, Object> param);
+
+    DataObjectAttribute getById(int id);
 
 }

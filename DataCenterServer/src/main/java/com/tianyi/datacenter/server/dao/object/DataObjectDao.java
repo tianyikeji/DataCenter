@@ -27,4 +27,6 @@ public interface DataObjectDao {
 
     List<DataObject> listByNoPage(Map<String, Object> param);
 
+    DataObject getById(int id);
+
 }

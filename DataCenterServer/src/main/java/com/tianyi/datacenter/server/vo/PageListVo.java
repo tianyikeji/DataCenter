@@ -14,6 +14,7 @@ public class PageListVo {
     private int page;
     private int pageSize;
     private int total;
+    private int pageTotal;
     private int flag;//仅用在工单管理查询视频列表的时候
 
     public static final int DEFAULT_PAGE_SIZE = 12;
@@ -42,15 +43,11 @@ public class PageListVo {
     }
 
     public PageListVo(int page, int pageSize) {
-        if (page == 0) page = 1;
-        if (pageSize == 0) pageSize = PageListVo.DEFAULT_PAGE_SIZE;
         this.page = page;
         this.pageSize = pageSize;
     }
 
     public PageListVo(int page, int pageSize, int total) {
-        if (page == 0) page = 1;
-        if (pageSize == 0) pageSize = PageListVo.DEFAULT_PAGE_SIZE;
         this.page = page;
         this.pageSize = pageSize;
         this.total = total;
@@ -84,6 +81,14 @@ public class PageListVo {
                 }
             }
         }
+    }
+
+    public int getPageTotal() {
+        return getPageCount();
+    }
+
+    public void setPageTotal(int pageTotal) {
+        this.pageTotal = pageTotal;
     }
 
     public int getPage() {

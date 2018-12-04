@@ -33,7 +33,7 @@ public class DataObjectAttributeServiceTest {
         dataObjectAttribute.setJdbcType("test");
         dataObjectAttribute.setDescription("test");
         dataObjectAttribute.setLength(50);
-        dataObjectAttribute.setName("test");
+        dataObjectAttribute.setColumnName("test");
         dataObjectAttribute.setRule("test");
         dataObjectAttribute.setType("test");
         dataObjectAttribute.setIsKey("no");
