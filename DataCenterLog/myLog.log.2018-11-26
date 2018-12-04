@@ -1,2 +1,0 @@
-2018-11-26 14:49:22.869 default [main] INFO  c.t.d.s.DataCenterServerApplication - No active profile set, falling back to default profiles: default
-2018-11-26 14:49:28.130 default [main] INFO  c.t.d.s.DataCenterServerApplication - Started DataCenterServerApplication in 6.818 seconds (JVM running for 7.569)

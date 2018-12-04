@@ -6,7 +6,7 @@
 	<groupId>com.springboot</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>GenCodeTool</name>
 	<description>Demo project for Spring Boot</description>
@@ -15,6 +15,7 @@
 		<artifactId>DataCenter</artifactId>
 		<groupId>com.tianyi.datacenter.server</groupId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
